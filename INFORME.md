@@ -80,7 +80,7 @@ jobs:
 
 - Crea una distribución con origen en tu bucket S3, ponemos como origen el bucket S3 creado:
 
-  ![Origen](img/origen.png)
+  ![Origen](img/origen_bucket.png)
 
   Amazon Cloudfront es el siguiente:
 
@@ -144,13 +144,13 @@ La URL de S3 es la siguiente: http://static-site-lab-10384292.s3-website-us-east
 
 - La distribución de CloudFront configurada.
 
-![Actions](img/clodfront.png)
+![Cloudfront](img/cloudfront.png)
 
 Origen del bucket S3 configurado:
-![Actions](img/origen.png)
+![Origen](img/origen_bucket.png)
 
 OAC configurado:
-![Actions](img/oac.png)
+![OAC](img/oac.png)
 
 - La URL pública completa donde se puede acceder al sitio web: https://d116gf1jhphhyr.cloudfront.net/index.html
 
