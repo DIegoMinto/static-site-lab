@@ -106,7 +106,19 @@ El enlace es el siguiente: https://d116gf1jhphhyr.cloudfront.net/index.html
 
 ### 5. Crea un archivo INFORME.md en la raíz del repositorio que contenga:
 
-- Una breve descripción del sitio web y del pipeline configurado.
+Una breve descripción del sitio web y del pipeline configurado: Se realizó un portafolio web con el framework Vite, se le agregó un Modo Oscuro mediante manipulación dinámica del DOM y un sistema de modales para desplegar detalles específicos sobre proyectos realizados por mi persona. En cuanto al pipeline se tiene:
+
+- El clonadodel código (actions/checkout@v4).
+
+- Configuración de Node.js (actions/setup-node@v4).
+
+- Instalación de dependencias y compilación de producción generando los recursos estáticos.
+
+- Autenticación segura en la nube de AWS utilizando llaves del usuario IAM puestas en el repositorio.
+
+- Sincronización atómica mediante aws s3 sync ./dist s3://... --delete excluyendo metadatos innecesarios de desarrollo (package.json, .git/\*, etc.).
+
+- Invalidación automatizada de la caché global de Cloudfront sobre la ruta "/\*".
 
 Capturas de pantalla que demuestren:
 
@@ -142,4 +154,4 @@ OAC configurado:
 
 - La URL pública completa donde se puede acceder al sitio web: https://d116gf1jhphhyr.cloudfront.net/index.html
 
-- Conclusiones sobre la utilidad del despliegue continuo para sitios estáticos.
+- Conclusiones sobre la utilidad del despliegue continuo para sitios estáticos: Dadas las características de la nube podemos comprobar que el despliegue de webs estáticas es totalmente rápido y podemos poner una página web estática en producción casi al instante con las configuraciones correctas, además se debe destacar la seguridad de AWS donde se logra proteger el acceso al bucket de S3 mediante el OAC y las claves de acceso secretas, de igual forma la disponibilidad con AWS siempre está garantizada así como el código de producción gracias a Github actions donde se nos muestra el error a la hora de compilar e incluso podemos limitar el manejo de ramas.
